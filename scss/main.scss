@@ -1,0 +1,97 @@
+@import "./_variables";
+@import "./_mixins";
+@import "./_placeholders";
+
+body{
+    margin: 0px;
+    background-color: #080E0C;
+    header{
+        background-size: cover;
+        position: relative;
+        background-image: url(../img/351974.jpg);
+        .nav{
+            padding: 10px 10px;
+            height: 30vh;
+            display: flex;  
+            align-items: flex-start;
+            justify-content: space-between;
+            &__item{
+                display: flex;
+                gap: 10px;
+                &--icon{
+                    height : 15px; 
+                    width: 15px;
+                }
+            }
+            &__logo{
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                & img{
+                    opacity:0.4;
+                    height: 130px;
+                    width: 130px;
+                }
+            }
+        }
+    }
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        // justify-content: space-between;
+        &__box{
+            padding: 10px;
+            width: calc(100% / 4);
+            // height:calc(100% / 4);
+            border: solid #467F6C;
+            &--date{
+                font-size: 33px;
+                color: #fff;
+                .bold{
+                    font-weight: bolder;
+                }
+            }
+            &--info{
+                color: #467F6C;
+            }
+            &--location{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                color: #467F6C;
+                img{
+                    height: 10px;
+                    width: 10px;
+                }
+            }
+            &:hover{
+                &--info{
+                    display: none;
+                }
+                border: solid;
+                filter: opacity(60%);
+                background-size: cover;
+                background-image: url(../img/797972.jpg);
+
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .nav__right{
+        display: none!important;
+    }
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        &__box{
+            width: 91%!important;
+        }
+    }
+}
